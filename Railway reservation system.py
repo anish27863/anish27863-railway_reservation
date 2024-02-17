@@ -154,7 +154,9 @@ def ticketbooking():
   num=int(input("Enter UPI id: "))
   upi_ps=int(input("Enter UPI password: "))
   if(num==upi.upi_id and upi_ps==upi.upi_pin):
-    print("Ticket Booked succesfully") 
+    print("Ticket Booked succesfully")
+  else:
+    print("Wrong id or password, ticket not booked")   
   
 
 def cancel_ticket():
