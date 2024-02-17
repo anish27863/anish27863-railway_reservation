@@ -2,7 +2,7 @@ import random
 import pandas as pd
 import payment as upi
 tickets={}
-pnr=random.randint(100,999)
+
 def display_menu():
   """Prints the menu options for the railway reservation system."""
   print("\nRailway Reservation System")
@@ -117,6 +117,7 @@ def ticketbooking():
   berth=["upper",'middle',"lower","Side upper","side lower"]
   n=int(input("Enter number of tickets you wish to book: "))
   for i in range(1,n+1):
+   pnr=random.randint(100,999)
    nm=input(f"Enter name of passenger {i} ")
    ag=int(input(f"Enter age of passenger {i} "))
    cl=int(input("choose preffered seating class:\n 1.First Ac \n 2.Second Ac \n 3.Third Ac \n 4.Sleeper \n 5.Seating \n "))
@@ -156,7 +157,8 @@ def ticketbooking():
   if(num==upi.upi_id and upi_ps==upi.upi_pin):
     print("Ticket Booked succesfully")
   else:
-    print("Wrong id or password, ticket not booked")   
+    print("Wrong id or password, ticket not booked")
+    tickets.clear()   
   
 
 def cancel_ticket():
