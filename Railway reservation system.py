@@ -23,6 +23,7 @@ def exitf():
 
 
 def trains_available():
+  '''prints available trains'''
   global trains
   trains = {
     "12345": {
@@ -70,6 +71,7 @@ def trains_available():
 
 
 def seat_availability():
+  '''checks seat availablilty in the selected train'''
   tno=input("Enter train number")
   global boardingstaion,unboardingstation,date,ac1,ac2,ac3,sl,st
   if(tno in trains):
@@ -113,6 +115,7 @@ def seat_availability():
 
 
 def ticketbooking():
+  '''books the ticket'''
   fare=0
   berth=["upper",'middle',"lower","Side upper","side lower"]
   n=int(input("Enter number of tickets you wish to book: "))
@@ -162,6 +165,7 @@ def ticketbooking():
   
 
 def cancel_ticket():
+    '''cancels the ticket'''
     a=int(input("Enter pnr number of the ticket to cancel"))
     if a in tickets:
         del tickets[a]
@@ -172,6 +176,7 @@ def cancel_ticket():
 
 
 def pnr_status():
+    '''does the pnr status check'''
     a=int(input("Enter pnr number of the ticket "))
     if a in tickets:
         print("Booking is confirmed")
@@ -180,6 +185,7 @@ def pnr_status():
 
 
 def display_booked_tickets():
+    '''displays booksed tickets'''
     print(print(pd.DataFrame.from_dict(tickets, orient='index').reset_index(drop=True)) )           
 
 
